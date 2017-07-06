@@ -30,7 +30,7 @@ void ATankPlayerController::AimTowardsCrossHair()
 
 	FVector HitLocation; // Out parameter
 	if (GetSightRayHitLocation(HitLocation))
-	{
+	{		
 		GetControlledTank()->AimAt(HitLocation);
 	}
 }
