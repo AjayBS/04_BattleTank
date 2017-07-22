@@ -12,14 +12,14 @@ void UTankMovement::Initialise(UTankTrack *LeftTrackToSet, UTankTrack *RightTrac
 
 void UTankMovement::IntendMoveForward(float Throw) 
 {	
-	if (!LeftTrack || !RightTrack) { return; }
+	if (!ensure(LeftTrack || !RightTrack)) { return; }
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(Throw);
 }
 
 void UTankMovement::IntendTurnRight(float Throw) 
 {
-	if (!LeftTrack || !RightTrack) { return; }
+	if (!ensure(LeftTrack || !RightTrack)) { return; }
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(-Throw);
 }
